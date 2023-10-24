@@ -6,7 +6,19 @@
 
 // function isimlerinde camelCase yazım şeklini tercih ederiz.
 // js function return type yok
-function sum(x,y) { // return olan bir function
+function multiply(x,y) { // return olan bir function
+
+  if(x === undefined || isNaN(x)) {
+    x = 1;
+    throw new Error('x değeri numeric değil');
+  }
+    
+
+  if(y === undefined || isNaN(y)) {
+    y = 1;
+  }
+   
+
   return x * y;
 }
 
@@ -15,9 +27,12 @@ function showMessage() {
 }
 
 // 3 farklı şekilde function çağırabiliriz.
-sum(4,6); // 24
-let s1 = sum(); // undefined
-let s2 = sum(7); // undefined
+multiply(4,6); // 24
+let s1 = multiply(); // NaN, 1
+let s2 = multiply(7); // NaN, 7
+let s3 = multiply("ali"); // NaN
+
+console.log("s1", "s2","s3", s1,s2,s3);
 
 showMessage();
 
