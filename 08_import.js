@@ -4,6 +4,8 @@ import Person  from "./08_export.js"; // using kod blogu
 // birden fazla export aynı dosya dizinden dışarıya çıkyorsa
 import { Export1, Export2 } from "./08_export.js";
 
+// const Export3 = require('./08_export.js'); // CommonJS
+
 // exportFile üzerinden bu dosyada ne var ne yoksa dışarı çıkar
 // bu dışarı çıkarılan dosyayı exportFile ismi ile kullanacağım.
 // namespace üzerinden eriştik
@@ -15,6 +17,8 @@ console.log("p", p);
 
 Export1();
 Export2();
+
+Export3(); // CommonJS Import
 
 // aynı method yada aynı sınıf ismine farklı export dosyalarında eriştiğimiz durumlarda namespace merge isim çakışmasını ortadan kaldırmak için kullanırız.
 exportFile.Export1();

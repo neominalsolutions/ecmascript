@@ -13,7 +13,6 @@ function Person(name,surname){
 // eğer ismi ile bir nesne dışırıdan çağırılacaksa default keyword tercih edilir.
 export default Person; // export C# public keyword tanımına eş değer.
 
-
 // bir js dosyasında birden fazla export varsa 
 export function Export1(){
   console.log("Export1");
@@ -24,3 +23,16 @@ export function Export2(){
 }
 
 // 2. kullanım şekli CommonJS formatı
+
+function Export3(){
+  console.log("export 3");
+}
+
+
+// module.exports = { replaceStr }
+// or
+// exports.Export3 = Export3
+
+// module.exports = Export3;
+
+
