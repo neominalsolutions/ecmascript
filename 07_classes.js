@@ -89,6 +89,12 @@ class Student extends Human {
     super(name,surname); // C# base keyword denk gelir.
     this.number = number;
   }
+
+  getFullName(){
+    // kendi kod logic uygulanır.
+    // JS Class yapıları içerisinde base sınıftan kalıtım alan sınıfın methodu ile aynı isimde bir method tanımı olursa otomatik ovveride eder. eğer base sınıfın methodunu tetiklemek istersek bu durumda super keyword base özelliklerine erişebiliriz.
+    super.getFullName();
+  }
 }
 
 var s = new Student("ahmet","can", "64545454");
