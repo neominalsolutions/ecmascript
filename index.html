@@ -9,6 +9,12 @@
 
 <body>
 
+  <button onclick="getTodos()">Get Todos</button>
+
+  <ul id="list">
+
+  </ul>
+
   <!-- <script src="01_variables.js"></script> -->
   <!-- <script src="02_arrowfunction.js"></script> -->
   <!-- <script src="03_deconstruction.js"></script> -->
@@ -18,7 +24,30 @@
   <!-- <script type="module" src="08_export.js"></script>
   <script type="module" src="08_import.js"></script> -->
   <!-- <script src="09_promises.js"></script> -->
-  <script src="10_asyncawait.js"></script>
+  <!-- <script src="10_asyncawait.js"></script> -->
+  <!-- <script src="11_sample.js"></script> -->
+  <script>
+
+    function getTodos() {
+      fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => { // resolve olduğu anı yakaldık.
+          // Doma basma işlemlerini burada yapacağız.
+          return response.json();
+          console.log('response', response);
+        }).then(data => {
+          console.log('data', data);
+
+          const ulElement = document.getElementById("list");
+          ulElement.innerHTML = '';
+
+          data.forEach(element => {
+            // ulElement.innerHTML += "<li id="+element.id+">"+element.title+"</li>"
+            ulElement.innerHTML += `<li id="${element.id}">${element.title}</li>`
+          });
+
+        })
+    }
+  </script>
 </body>
 
 </html>
